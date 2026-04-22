@@ -1,0 +1,14 @@
+@use "variables";
+@use "mixins";
+
+.hover-btn-anim {
+  @include mixins.hover-button;
+}
+
+.hover-card-anim {
+  @include mixins.hover-card;
+}
+
+.hover-nav-anim {
+  @include mixins.hover-nav-link;
+}

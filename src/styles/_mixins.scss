@@ -1,0 +1,36 @@
+@use "variables" as var;
+
+@mixin hover-button {
+  transition: transform var.$btn-duration var.$btn-easing, background-color var.$btn-duration var.$btn-easing;
+  &:hover {
+    transform: scale(var.$btn-scale);
+  }
+}
+
+@mixin hover-card {
+  transition: transform var.$card-duration var.$card-easing, box-shadow var.$card-duration var.$card-easing;
+  &:hover {
+    transform: var.$card-transform;
+    box-shadow: var.$card-shadow;
+  }
+}
+
+@mixin hover-nav-link {
+  position: relative;
+  text-decoration: none;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var.$nav-underline-color;
+    transition: width var.$nav-duration ease-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
