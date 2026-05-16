@@ -43,20 +43,26 @@ export function FloatingChatBot() {
   }, [messages, isOpen, isMinimized, isLoading]);
 
   const generateResponse = async (
-    input: string,
+    chatHistory: Message[], // <-- CHANGED: Now accepts the whole array
   ): Promise<string> => {
     setIsLoading(true);
 
     try {
-      // If you are bypassing Hono for local testing, you can change this to "http://localhost:8000/chat", "https://cognisync-backend.onrender.com/chat"
       const fastApiUrl = "https://cogni-sync-backend.vercel.app/chat"; 
+
+      // Format the messages to match the Pydantic model in FastAPI
+      const formattedMessages = chatHistory.map(msg => ({
+        role: msg.role === "bot" ? "ai" : "user",
+        content: msg.content
+      }));
 
       const response = await fetch(fastApiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ query: input }),
+        // <-- CHANGED: Now sends the entire formatted array as 'messages'
+        body: JSON.stringify({ messages: formattedMessages }), 
       });
 
       if (!response.ok) {
@@ -66,7 +72,6 @@ export function FloatingChatBot() {
       const data = await response.json();
       setIsLoading(false);
 
-      // Return the reply from your Llama 3 engine!
       return data.reply;
     } catch (error) {
       console.error("Failed to fetch AI response:", error);
@@ -85,12 +90,15 @@ export function FloatingChatBot() {
       content: inputValue,
     };
 
-    setMessages((prev) => [...prev, newUserMsg]);
+    // <-- CHANGED: Create the new array first so we can send it to the AI
+    const updatedMessages = [...messages, newUserMsg];
+    
+    setMessages(updatedMessages);
     setInputValue("");
 
-    const responseContent = await generateResponse(
-      newUserMsg.content,
-    );
+    // <-- CHANGED: Pass the ENTIRE updated array to generateResponse
+    const responseContent = await generateResponse(updatedMessages);
+    
     const newBotMsg: Message = {
       id: (Date.now() + 1).toString(),
       role: "bot",
