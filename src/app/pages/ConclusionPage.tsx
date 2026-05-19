@@ -28,12 +28,6 @@ export function ConclusionPage() {
           <h2 className="text-2xl font-bold text-foreground border-b border-border pb-2">Key Takeaways</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <TakeawayCard 
-              icon={<Target className="w-6 h-6 text-primary" />}
-              title="Cultural Nuance Matters"
-              description="A one-size-fits-all approach to digital wellness doesn't work. By understanding Taglish user inputs and suggesting local analog hobbies (like playing sungka or OPM guitar) in professional English, interventions remain accessible yet authoritative."
-              delay={0.1}
-            />
-            <TakeawayCard 
               icon={<Lightbulb className="w-6 h-6 text-chart-4" />}
               title="CBT-Lite Efficacy"
               description="Simplifying Cognitive Behavioral Therapy into bite-sized, chat-based interactions removes the friction of starting therapy, offering an accessible bridge for students who are experiencing digital burnout."
@@ -58,7 +52,7 @@ export function ConclusionPage() {
           <h2 className="text-2xl font-bold text-card-foreground">The Road Ahead</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              By deploying the Python FastAPI backend and Llama-3.1-8B RAG pipeline to Vercel's cloud infrastructure, the prototype has transitioned from local testing to a live, integrated web service. This deployment demonstrates a fully functional end-to-end CBT-Lite chatbot, accessible via a production-grade cloud environment.
+              By deploying the Python FastAPI backend and llama-3.3-70b-versatile pipeline to Vercel's cloud infrastructure, the prototype has transitioned from local testing to a live, integrated web service. This deployment demonstrates a fully functional end-to-end CBT-Lite chatbot, accessible via a production-grade cloud environment.
             </p>
             <p>
               <strong>Upcoming Technical Goals:</strong>
