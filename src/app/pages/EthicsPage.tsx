@@ -34,7 +34,7 @@ export function EthicsPage() {
           <EthicsCard 
             icon={<ShieldCheck className="w-6 h-6 text-chart-2" />}
             title="Safe RAG Architecture"
-            description="The underlying system utilizes a live Python FastAPI backend with Retrieval-Augmented Generation (RAG). The Llama-3.1 model only references validated CBT-Lite principles from our secured local vector database, preventing hallucinated psychological advice."
+            description="The underlying system utilizes a live Python FastAPI backend with Retrieval-Augmented Generation (RAG). The Llama-3.3 model only references validated CBT-Lite principles from our secured local vector database, preventing hallucinated psychological advice."
             delay={0.2}
           />
           <EthicsCard 
@@ -64,7 +64,7 @@ export function EthicsPage() {
           </h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              <strong>Current State (FastAPI Integrated):</strong> We have successfully bypassed initial Supabase edge function deployment errors by directly integrating our chatbot logic with a local Python FastAPI backend and Groq's Llama-3.1 API. 
+              <strong>Current State (FastAPI Integrated):</strong> We have successfully bypassed initial Supabase edge function deployment errors by directly integrating our chatbot logic with a local Python FastAPI backend and Groq's Llama-3.3 API. 
             </p>
             <p>
               The AI chatbot now actively routes requests through this RAG-enabled backend. The AI model is constrained by strict guardrails that reject queries outside the scope of digital fasting, screen-time management, and analog hobby discovery.
