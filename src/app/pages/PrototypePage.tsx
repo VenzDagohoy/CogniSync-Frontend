@@ -63,7 +63,7 @@ export function PrototypePage() {
             </div>
             <h3 className="text-2xl font-bold text-card-foreground mb-4">Strict Guardrails & AI Engine</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Powered by the <strong className="text-primary">Llama-3.1-8B-Instant</strong> model via Groq, the AI acts with a "Digital Wellness" persona. It strictly enforces Philippine domain limitations, answering only tech addiction queries and refusing medical diagnoses or academic tutoring. User inputs in Taglish are understood, but all AI responses are formulated strictly in professional English.
+              Powered by the <strong className="text-primary">llama-3.3-70b-versatile</strong> model via Groq, the AI acts with a "Digital Wellness" persona. It strictly enforces Philippine domain limitations, answering only tech addiction queries and refusing medical diagnoses or academic tutoring. User inputs in Taglish are understood, but all AI responses are formulated strictly in professional English.
             </p>
           </motion.div>
 
