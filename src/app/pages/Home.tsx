@@ -142,7 +142,7 @@ export function Home() {
                 {
                   icon: <Globe className="w-5 h-5 text-[#ab5e53]" />,
                   title: "Localized AI Context",
-                  desc: "Grounded in a curated database of Philippine mental health research (2020-2026). Supports Taglish tone.",
+                  desc: "Grounded in a curated database of Philippine mental health research (2020-2026). Supports English, Tagalog, Taglish, Bisaya tone.",
                   bgColor: "bg-[#f2f0ea]"
                 },
                 {
